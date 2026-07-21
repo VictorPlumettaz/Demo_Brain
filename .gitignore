@@ -1,0 +1,25 @@
+# Private folder stays local — but keep the README so the structure is visible
+07_private/*
+!07_private/README.md
+
+# Obsidian workspace state (per-device, not worth syncing)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+
+# OS clutter
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Binaries do not belong in a text repo
+*.exe
+*.dll
+*.msi
+*.zip
+node_modules/
+
+# Audio: transcribe it, then delete it
+*.m4a
+*.mp3
+*.wav
