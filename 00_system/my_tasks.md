@@ -10,6 +10,9 @@ updated: 2026-08-22
 **This page stores nothing.** Every task below lives in the project or area it belongs to —
 this is just a query that collects them. Tick a task here and it is ticked at the source.
 
+Each block asks the same folder twice: once for what is open, once for what is done. Ticking a
+task does not move it anywhere — the first query stops matching it, the second starts.
+
 That is the whole point: a task keeps its context. The same task copied into a to-do app
 loses the link to why it exists.
 
@@ -36,12 +39,30 @@ FROM "02_projects/cutting_optimizer_rewrite"
 WHERE !completed
 ```
 
+### Recently done
+
+```dataview
+TASK
+FROM "02_projects/cutting_optimizer_rewrite"
+WHERE completed
+LIMIT 5
+```
+
 ## Glaswerk Nord Onboarding
 
 ```dataview
 TASK
 FROM "02_projects/customer_onboarding_glaswerk_nord"
 WHERE !completed
+```
+
+### Recently done
+
+```dataview
+TASK
+FROM "02_projects/customer_onboarding_glaswerk_nord"
+WHERE completed
+LIMIT 5
 ```
 
 ## Coffee Machine API
@@ -52,6 +73,15 @@ FROM "02_projects/coffee_machine_api"
 WHERE !completed
 ```
 
+### Recently done
+
+```dataview
+TASK
+FROM "02_projects/coffee_machine_api"
+WHERE completed
+LIMIT 5
+```
+
 ## Areas
 
 ```dataview
@@ -60,23 +90,21 @@ FROM "03_areas"
 WHERE !completed
 ```
 
+### Recently done
+
+```dataview
+TASK
+FROM "03_areas"
+WHERE completed
+LIMIT 5
+```
+
 ## Blocked — waiting on someone
 
 ```dataview
 TASK
 FROM "02_projects" OR "03_areas"
 WHERE !completed AND contains(text, "blocked")
-```
-
-## Done
-
-Nothing moves here. It is the same task in the same file — the query above stops matching it
-and this one starts.
-
-```dataview
-TASK
-FROM "02_projects" OR "03_areas"
-WHERE completed
 ```
 
 ---
