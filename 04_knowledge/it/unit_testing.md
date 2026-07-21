@@ -12,10 +12,10 @@ fails loudly when someone changes the behaviour.
 
 ## Why it matters here
 
-The [[cutting_optimizer_rewrite_overview]] is the reason this page exists. The old optimizer
-has no tests at all, so every change to it is a bet. The rewrite has 140, and twice already one
-caught a rounding change I would have shipped — the sort of thing that becomes scrap glass at
-[[glaswerk_nord_overview]] rather than a red build.
+The [[cutting_optimizer_rewrite_overview]] is why this page exists. The old optimizer has no
+tests at all, so every change to it is a bet. The rewrite has 140, and twice one of them caught
+a rounding change I would have shipped — scrap glass at [[glaswerk_nord_overview]] rather than
+a red build.
 
 ## Arrange, act, assert
 
@@ -68,16 +68,14 @@ The bottom left is the habit worth having: when [[priya_tempered]] reports a bug
 test that reproduces it *first*. It fails, you fix it, it passes, and it stays there so the bug
 cannot come back quietly.
 
-A test that needs a database is an integration test. Different project, nightly build, 90
-seconds — see [[dependency_injection]] for how the unit ones avoid needing one.
+A test that needs a database is an integration test: different project, nightly build, 90 s.
 
 ## The oracle trick
 
 For the rewrite we do something [[dana_frames]] suggested: run the old engine and the new one
 over the same 200 real orders and assert the yields match to within 0.1 %. Not a unit test in
-any strict sense, but it is the only thing giving us confidence that 20 years of undocumented
-behaviour survived the move. When they disagree we decide which is right, and the decision goes
-into [[cutting_optimizer_rewrite_decisions]].
+any strict sense, but the only thing giving us confidence that 20 years of undocumented
+behaviour survived the move. Disagreements end up in [[cutting_optimizer_rewrite_decisions]].
 
 ## Honest bit
 

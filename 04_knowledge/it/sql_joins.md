@@ -14,8 +14,7 @@ happens to the rows that find no partner.
 
 Nearly every support question at [[product_support_overview]] ends in a query against the
 [[paneflow]] database — "which orders have no cutting pattern yet", "which panes sit on a sheet
-that was never consumed". A wrong join type produces no error, only a plausible number that is
-quietly wrong.
+never consumed". A wrong join type produces no error, only a plausible number that is wrong.
 
 ## The tables
 
@@ -54,10 +53,8 @@ exists on SQL Server and PostgreSQL but not on MySQL.
 
 ## The trap
 
-This looks like a `LEFT JOIN` and is not one:
-
 ```sql
--- WRONG: silently an INNER JOIN
+-- looks like a LEFT JOIN, is silently an INNER JOIN
 SELECT o.order_id, l.lite_id
 FROM orders AS o
 LEFT JOIN lites AS l ON l.order_id = o.order_id
@@ -76,9 +73,8 @@ LEFT JOIN lites AS l ON l.order_id = o.order_id
                     AND l.width_mm > 1000;
 ```
 
-Rule of thumb: conditions about the **right** table belong in `ON`, conditions about the
-**left** table belong in `WHERE`. The one deliberate exception is the anti-join, where the
-`NULL` test is the point rather than an accident:
+Rule of thumb: conditions about the **right** table belong in `ON`, about the **left** table in
+`WHERE`. The exception is the anti-join, where the `NULL` test is the point, not an accident:
 
 ```sql
 -- orders with no lites at all
