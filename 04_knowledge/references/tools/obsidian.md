@@ -63,7 +63,29 @@ sitting alone at the edge are notes I filed and never connected to anything. Tha
 list. When it looks like a hairball, the same view tells me a topic has grown big enough to
 need a MOC — which is how [[moc_development]] came about.
 
-For the talk on 26 August: hide attachments and orphans, or the picture is unreadable.
+### The filter I actually use
+
+```
+-path:00_system -path:01_inbox -path:05_daily_notes -path:06_archive -path:07_private -file:README
+```
+
+That cuts 81 notes down to 43, and the picture becomes readable for the first time.
+
+The counter-intuitive part is **what** gets cut. Not unimportant notes — the two most connected
+pages in the vault: [[index]] links to forty others, [[log]] to twenty-one. Both point at
+everything by design, so in a graph they drag everything into the centre and flatten every
+cluster worth seeing. The daily notes do the same on a smaller scale: twelve files, eighty
+links, connected to everything because that is their job.
+
+**A graph does not get better by adding to it. It gets better by leaving out whatever is
+connected to everything.**
+
+Colour groups, kept deliberately non-overlapping so the order does not matter: projects orange,
+areas blue, `04_knowledge/people` magenta, the rest of the knowledge green. People get their
+own colour because they turn out to be the densest nodes here — at work, almost everything
+hangs off somebody.
+
+Settings live in `.obsidian/graph.json`, so they survive a restart and travel with the repo.
 
 ## Plugins I actually use
 
