@@ -75,7 +75,7 @@ When it tells me something about our systems, there are only two honest cases:
 1. It **read** it — then it says which file, and I can check.
 2. It **worked it out** — then the line says `derived, not verified`, and I go and check.
 
-This is in `00_system/writing_style.md` as a requirement for the vault, and it is the single
+This is in `00_system/conventions/writing_style.md` as a requirement for the vault, and it is the single
 rule that makes the notes trustworthy six months later. A page that mixes the two, without
 saying which is which, is worse than no page, because it reads exactly as convincingly.
 

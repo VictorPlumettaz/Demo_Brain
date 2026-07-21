@@ -1,6 +1,6 @@
 ---
 title: "{{Project}} — Meeting {{YYYY-MM-DD}}"
-tags: [meeting, "{{project-slug}}"]
+tags: [meeting]          # + the project tag, e.g. optimizer
 date: {{YYYY-MM-DD}}
 created: {{YYYY-MM-DD}}
 updated: {{YYYY-MM-DD}}

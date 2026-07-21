@@ -1,6 +1,6 @@
 ---
 title: "{{PROJECT NAME}}: Overview"
-tags: [project, "{{project-slug}}"]
+tags: [project]          # + the project slug, e.g. optimizer
 status: active
 started: {{YYYY-MM-DD}}
 created: {{YYYY-MM-DD}}
