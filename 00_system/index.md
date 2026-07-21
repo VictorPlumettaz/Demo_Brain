@@ -27,7 +27,7 @@ Material flows downward. See [[vault_layers.canvas]] for the picture.
 ## Steering
 
 - [[CLAUDE.md]] — how the AI is steered. The most important file here.
-- [[writing_style]] — how everything in this vault is written
+- [[writing_style]] — how everything in this vault is written (now in `conventions/`)
 - [[log]] — what was processed, when
 - [[my_tasks]] — every open task, collected by query
 

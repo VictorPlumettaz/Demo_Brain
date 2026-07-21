@@ -45,6 +45,20 @@ Project files repeat the project name even though they sit in a folder named aft
 project. It looks redundant in the file tree — it is not. Open tabs, search results and
 links all show the filename without its folder.
 
+## The four exceptions
+
+Uppercase is wrong everywhere except where a tool expects it:
+
+| File | Why it shouts |
+|---|---|
+| `README.md` | GitHub and most editors look for this exact name |
+| `CLAUDE.md` | Claude Code reads this exact name at startup |
+| `SKILL.md` | Claude Code reads this exact name inside a skill folder |
+| `MEMORY.md` | index of the memory folder, named after the same pattern |
+
+That is the whole list. A file that shouts without being on it is a mistake — and an agent
+reading this convention would otherwise rename all four and break the vault.
+
 ## Folders
 
 Same rule, plus the numeric prefix at the top level (`00_` … `07_`). The numbers force a

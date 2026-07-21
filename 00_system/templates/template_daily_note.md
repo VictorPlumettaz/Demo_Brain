@@ -1,6 +1,6 @@
 ---
 title: Daily Note {{YYYY-MM-DD}}
-tags: [daily-note]
+tags: [daily]            # + the calendar week, e.g. kw34
 date: {{YYYY-MM-DD}}
 created: {{YYYY-MM-DD}}
 updated: {{YYYY-MM-DD}}

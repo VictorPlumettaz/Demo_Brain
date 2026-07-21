@@ -1,6 +1,6 @@
 ---
 title: "{{Topic}}"
-tags: [knowledge, "{{area}}"]
+tags: [knowledge]        # + the subject area, e.g. it
 created: {{YYYY-MM-DD}}
 updated: {{YYYY-MM-DD}}
 source: {{where this came from — omit the field entirely if it is your own understanding}}

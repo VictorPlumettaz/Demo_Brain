@@ -40,6 +40,18 @@ Use tags for **states** (`#status/open`, `#priority/high`), links for **things**
    it is a note to self. Obsidian shows it greyed out. Create the page when the topic comes
    up a second time — see stub first in `wiki_page_layout.md`.
 5. **Never copy a paragraph between notes.** If you want to, that paragraph is its own page.
+6. **Write the filename, not the path** — `[[dana_frames]]`, not `[[04_knowledge/people/dana_frames]]`.
+   Moving a file then costs nothing.
+
+## Two exceptions to rule 6
+
+| Case | Write it as | Why |
+|---|---|---|
+| Several files share a name | `[[01_inbox/README\|inbox rules]]` | Three `README.md` exist. Without the path the link is ambiguous. |
+| The target is not Markdown | `[[vault_layers.canvas]]` | Obsidian needs the extension for `.canvas`, images and PDFs. |
+
+`[[CLAUDE.md]]` keeps its extension by habit, not by need — it reads like the filename it is.
+Not worth changing, worth knowing.
 
 ## What a good page links to
 

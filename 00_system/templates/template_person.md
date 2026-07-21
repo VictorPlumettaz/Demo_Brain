@@ -1,6 +1,6 @@
 ---
 title: "{{Firstname Lastname}}"
-tags: [person, "{{team}}"]
+tags: [person]           # + the team, e.g. development
 created: {{YYYY-MM-DD}}
 updated: {{YYYY-MM-DD}}
 ---

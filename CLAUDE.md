@@ -44,7 +44,7 @@ Nothing stays in `01_inbox/` permanently.
 
 ## Writing style
 Short and direct. No filler, no corporate nouns. Explain a term the first time it appears.
-Details: `00_system/writing_style.md`
+Details: `00_system/conventions/writing_style.md`
 
 ## Conventions
 Read these only when you need them:
