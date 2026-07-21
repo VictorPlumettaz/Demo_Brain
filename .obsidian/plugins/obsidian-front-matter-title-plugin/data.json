@@ -1,0 +1,43 @@
+{
+  "version": "3.13.1",
+  "templates": {
+    "common": {
+      "main": "{{title}}",
+      "fallback": "{{name}}"
+    }
+  },
+  "rules": {
+    "paths": {
+      "mode": "black",
+      "values": []
+    },
+    "delimiter": {
+      "enabled": false,
+      "value": ""
+    }
+  },
+  "boot": {
+    "delay": 1000,
+    "background": true
+  },
+  "features": {
+    "explorer": {
+      "enabled": true
+    },
+    "graph": {
+      "enabled": true
+    },
+    "header": {
+      "enabled": true
+    },
+    "search": {
+      "enabled": true
+    },
+    "alias": {
+      "enabled": false
+    },
+    "tab": {
+      "enabled": true
+    }
+  }
+}

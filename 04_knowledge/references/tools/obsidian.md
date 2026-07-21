@@ -73,18 +73,45 @@ Core, on:
 - Daily notes — one file per day, template applied
 - Templates
 
-Community, three:
+Community, five:
 
 | Plugin | For | Worth it |
 |---|---|---|
-| Dataview | the queries behind `00_system/my_tasks.md` and the MOCs | yes, it stores nothing itself |
-| Obsidian Git | commit and pull from the phone, where there is no terminal | yes |
+| **Claudian** | chat with Claude **inside** Obsidian, in a side pane next to the note | yes — see below |
+| Dataview | the queries behind [[my_tasks]] and the MOCs | yes, it stores nothing itself |
 | Templater | fills `created` and `updated` in the frontmatter so I do not | yes, small |
+| Front Matter Title | shows the `title:` field instead of `cutting_optimizer_rewrite_overview.md` | cosmetic, but I read the sidebar all day |
+| BRAT | installs and updates plugins that are not in the community store | only because of Claudian |
 
-I installed fourteen in the first week and removed eleven. The rule that emerged: a plugin is
-fine if the file still makes sense with the plugin uninstalled. A Dataview block degrades to a
-visible code block — that is acceptable. A plugin that stores its state in its own format
-breaks the whole point and has to go.
+I installed fourteen in the first week and removed eleven. The rule that emerged: **a plugin is
+fine if the file still makes sense with the plugin uninstalled.** A Dataview block degrades to a
+visible code block — acceptable. Front Matter Title changes nothing on disk at all. A plugin
+that stores its state in its own format breaks the whole point and has to go.
+
+No Git plugin. I do not need one, because Claude commits at the end of a session — see
+[[claude_code]].
+
+## Claudian — the terminal, in the sidebar
+
+[Claudian](https://github.com/YishenTu/claudian) puts a Claude Code session in an Obsidian
+pane. Same agent, same `CLAUDE.md`, same access to the vault — but next to the note instead of
+in a separate terminal window.
+
+Why that matters more than it sounds:
+
+- **No context switch.** The note I am asking about is open on the left. I do not describe it,
+  I point at it.
+- **The link between chat and file collapses.** Claude writes into the file, the file updates
+  live in the pane beside it. Reading the change is the same motion as asking for it.
+- **It is not a chatbot in a sidebar.** It reads and writes real files, runs commands and makes
+  commits. Everything in [[claude_code]] applies unchanged — the window is the only difference.
+
+Installed via BRAT, because it is not in the community store. That is also its main
+disadvantage: no automatic vetting, and updates arrive whenever the author pushes.
+
+**When I still use the terminal:** anything long-running, anything where I want the full output,
+and every `git` operation I do not fully trust yet. The pane is for working *on a note*. The
+terminal is for working *on the vault*.
 
 ## One quirk
 
