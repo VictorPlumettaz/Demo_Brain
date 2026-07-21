@@ -2,7 +2,7 @@
 title: My Tasks
 tags: [system, dashboard, tasks]
 created: 2026-04-20
-updated: 2026-08-21
+updated: 2026-08-22
 ---
 
 # My Tasks
@@ -66,6 +66,17 @@ WHERE !completed
 TASK
 FROM "02_projects" OR "03_areas"
 WHERE !completed AND contains(text, "blocked")
+```
+
+## Done
+
+Nothing moves here. It is the same task in the same file — the query above stops matching it
+and this one starts.
+
+```dataview
+TASK
+FROM "02_projects" OR "03_areas"
+WHERE completed
 ```
 
 ---
