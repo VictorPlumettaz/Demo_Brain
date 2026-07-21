@@ -73,7 +73,7 @@ Core, on:
 - Daily notes — one file per day, template applied
 - Templates
 
-Community, five:
+Community, six:
 
 | Plugin | For | Worth it |
 |---|---|---|
@@ -82,6 +82,12 @@ Community, five:
 | Templater | fills `created` and `updated` in the frontmatter so I do not | yes, small |
 | Front Matter Title | shows the `title:` field instead of `cutting_optimizer_rewrite_overview.md` | cosmetic, but I read the sidebar all day |
 | BRAT | installs and updates plugins that are not in the community store | only because of Claudian |
+| Style Settings | lets the theme expose its options | only as a dependency of the theme |
+
+**Theme:** AnuPpuccin, with rainbow folder colouring switched on. That is where the coloured
+folders come from — not from Obsidian, and not from anything stored in the notes. Turn the
+theme off and every file is exactly as it was. Which is the same test as above, and the reason
+I am relaxed about a theme in a way I am not about a plugin that owns my data.
 
 I installed fourteen in the first week and removed eleven. The rule that emerged: **a plugin is
 fine if the file still makes sense with the plugin uninstalled.** A Dataview block degrades to a

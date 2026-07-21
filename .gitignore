@@ -2,18 +2,24 @@
 07_private/*
 !07_private/README.md
 
+# Claudian conversation history. This is a PUBLIC repo — chat transcripts stay local.
+# The skills under .claude/ are deliberately tracked: they are part of the demo.
+.claudian/
+.obsidian/plugins/realclaudian/data.json
+
 # Obsidian workspace state (per-device, not worth syncing)
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
 .obsidian/cache
 
-# Plugin CODE is not ours to redistribute — but which plugins, which versions and
-# which settings absolutely belong in the repo. So: manifest.json and data.json stay,
-# the bundles do not. Install them yourself, see README.
+# Plugin and theme CODE is not ours to redistribute — but which ones, which versions
+# and which settings absolutely belong in the repo. So: manifest.json and data.json
+# stay, the bundles do not. Install them yourself, see README.
 .obsidian/plugins/*/main.js
 .obsidian/plugins/*/styles.css
 .obsidian/plugins/*/*.wasm
 .obsidian/plugins/*/brat-migrations.json
+.obsidian/themes/*/theme.css
 
 # OS clutter
 .DS_Store
