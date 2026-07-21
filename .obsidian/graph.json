@@ -1,6 +1,6 @@
 {
   "collapse-filter": true,
-  "search": "-path:07_private",
+  "search": "-path:00_system -path:01_inbox -path:05_daily_notes -path:06_archive -path:07_private -file:README",
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": true,
@@ -22,30 +22,30 @@
       }
     },
     {
-      "query": "path:04_knowledge",
+      "query": "path:04_knowledge/people",
       "color": {
         "a": 1,
-        "rgb": 2278750
+        "rgb": 15235577
       }
     },
     {
-      "query": "path:05_daily_notes",
+      "query": "path:04_knowledge/it OR path:04_knowledge/company OR path:04_knowledge/references",
       "color": {
         "a": 1,
-        "rgb": 9741240
+        "rgb": 2278750
       }
     }
   ],
   "collapse-display": false,
   "showArrow": true,
   "textFadeMultiplier": -1.4,
-  "nodeSizeMultiplier": 2.2,
-  "lineSizeMultiplier": 1.7,
+  "nodeSizeMultiplier": 2.4,
+  "lineSizeMultiplier": 1.6,
   "collapse-forces": false,
   "centerStrength": 0.4,
-  "repelStrength": 12,
+  "repelStrength": 10,
   "linkStrength": 0.8,
-  "linkDistance": 300,
-  "scale": 0.6,
+  "linkDistance": 250,
+  "scale": 0.8,
   "close": false
 }

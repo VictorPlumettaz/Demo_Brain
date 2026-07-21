@@ -16,7 +16,7 @@ wrote it on one of my pull requests.
 
 ## The change itself
 
-- [ ] The diff does one thing. If the description needs the word "and", it is two pull requests.
+- [x] The diff does one thing. If the description needs the word "and", it is two pull requests. [completion:: 2026-07-21]
 - [ ] Under 400 changed lines → [[code_review_overview]]
 - [ ] I have read my own diff top to bottom in the web view, not in the editor. Different view,
       different mistakes.
