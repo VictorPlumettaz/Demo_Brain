@@ -54,13 +54,11 @@ public class PriceCalculator
 Nothing clever happened. The class stopped choosing and started asking. A test can now hand it
 a fake returning two rates from memory, and it runs in a millisecond with no database in sight
 — [[unit_testing]]. The constructor is also documentation: `PriceCalculator(IPriceRepository)`
-says in one line what this class touches, where the old version said nothing until you had read
-every method.
+says what this class touches, where the old version said nothing until you had read it all.
 
 ## Who does the handing over
 
-In ASP.NET Core, a container: register once which class stands behind each interface, and it
-assembles the object graph on demand.
+In ASP.NET Core, a container. Register which class stands behind each interface, once:
 
 ```csharp
 builder.Services.AddScoped<IPriceRepository, SqlPriceRepository>();
@@ -82,9 +80,8 @@ startup when I do it, which is nicer than the bug it used to be.
 I still do not fully understand why this needs an interface when there is exactly one real
 implementation and never will be a second. [[dana_frames]] said: there are always two, the real
 one and the test double, and the test double is the one you use every day. Satisfying answer,
-still feels like ceremony some mornings. Also true, and less comforting: a constructor with
-nine parameters is not good dependency injection, it is a class doing nine things with the
-injection making it visible.
+still feels like ceremony some mornings. Also true: a constructor with nine parameters is not
+good dependency injection, it is a class doing nine things with the injection making it visible.
 
 ## Related
 
