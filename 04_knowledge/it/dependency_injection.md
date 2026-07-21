@@ -30,8 +30,8 @@ public class PriceCalculator
 ```
 
 This class works. It is also untestable, and the reason is the word `new`. To check one line of
-arithmetic I need a SQL Server, that exact database, and rates for order 4711 sitting in it.
-When the test fails I cannot tell whether the maths is wrong or somebody changed a row.
+arithmetic I need a SQL Server, that exact database, and rates for order 4711 in it — and when
+the test fails I cannot tell whether the maths is wrong or somebody changed a row.
 
 ## The fix
 
@@ -52,16 +52,15 @@ public class PriceCalculator
 ```
 
 Nothing clever happened. The class stopped choosing and started asking. A test can now hand it
-a fake returning two rates from memory, and the whole thing runs in a millisecond with no
-database in sight — [[unit_testing]].
-
-The constructor is also documentation. `PriceCalculator(IPriceRepository)` says in one line what
-this class touches. The old version said nothing until you had read every method.
+a fake returning two rates from memory, and it runs in a millisecond with no database in sight
+— [[unit_testing]]. The constructor is also documentation: `PriceCalculator(IPriceRepository)`
+says in one line what this class touches, where the old version said nothing until you had read
+every method.
 
 ## Who does the handing over
 
-In ASP.NET Core, a container: you register once which concrete class stands behind each
-interface, and it assembles the object graph on demand.
+In ASP.NET Core, a container: register once which class stands behind each interface, and it
+assembles the object graph on demand.
 
 ```csharp
 builder.Services.AddScoped<IPriceRepository, SqlPriceRepository>();
@@ -74,23 +73,21 @@ builder.Services.AddScoped<PriceCalculator>();
 | `AddScoped` | one HTTP request | repositories, anything holding a DbContext |
 | `AddSingleton` | the whole application | config, caches, clients safe to share |
 
-The rule I got wrong once: a singleton must not take a scoped service in its constructor,
-because it would hold on to something meant to live for one request. In Development the app
-throws at startup when I do it, which is much nicer than the bug it used to be.
+The rule I got wrong once: a singleton must not take a scoped service in its constructor, or it
+holds on to something meant to live for one request. In Development the app now throws at
+startup when I do it, which is nicer than the bug it used to be.
 
 ## Honest bit
 
 I still do not fully understand why this needs an interface when there is exactly one real
 implementation and never will be a second. [[dana_frames]] said: there are always two, the real
 one and the test double, and the test double is the one you use every day. Satisfying answer,
-still feels like ceremony some mornings.
-
-Also true: a constructor with nine parameters is not good dependency injection. It is a class
-doing nine things, and the injection is only making it visible.
+still feels like ceremony some mornings. Also true, and less comforting: a constructor with
+nine parameters is not good dependency injection, it is a class doing nine things with the
+injection making it visible.
 
 ## Related
 
 - [[unit_testing]]
 - [[cutting_optimizer_rewrite_overview]]
-- [[dana_frames]]
 - [[moc_development]]
