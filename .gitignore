@@ -7,6 +7,14 @@
 .obsidian/workspace-mobile.json
 .obsidian/cache
 
+# Plugin CODE is not ours to redistribute — but which plugins, which versions and
+# which settings absolutely belong in the repo. So: manifest.json and data.json stay,
+# the bundles do not. Install them yourself, see README.
+.obsidian/plugins/*/main.js
+.obsidian/plugins/*/styles.css
+.obsidian/plugins/*/*.wasm
+.obsidian/plugins/*/brat-migrations.json
+
 # OS clutter
 .DS_Store
 Thumbs.db
