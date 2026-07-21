@@ -1,24 +1,166 @@
 {
-	"nodes":[
-		{"id":"title","type":"text","x":0,"y":-440,"width":640,"height":120,"text":"# How this vault works\n\nEight folders. Material always flows **downward**."},
-		{"id":"inbox","type":"text","x":0,"y":-260,"width":640,"height":110,"color":"1","text":"## 01_inbox — INPUT\nRaw material. A **buffer, never a storage**.\nEmpty after every ingest."},
-		{"id":"projects","type":"text","x":-20,"y":-80,"width":300,"height":140,"color":"2","text":"## 02_projects\nCONTEXT — work that **ends**.\n\nOne folder each.\nOverview + tasks + decisions."},
-		{"id":"areas","type":"text","x":360,"y":-80,"width":300,"height":140,"color":"2","text":"## 03_areas\nCONTEXT — work that **never ends**.\n\nSupport, review, team.\nNo finish line."},
-		{"id":"knowledge","type":"text","x":0,"y":140,"width":640,"height":130,"color":"4","text":"## 04_knowledge — MEMORY\nThe permanent wiki. Where things **compound**.\n\n`it/` · `people/` · `company/` · `references/`"},
-		{"id":"daily","type":"text","x":770,"y":-80,"width":340,"height":140,"color":"5","text":"## 05_daily_notes\nLOG — what happened, day by day.\n\nRuns **alongside** everything.\nWeekly reports are built from it."},
-		{"id":"archive","type":"text","x":0,"y":350,"width":640,"height":120,"color":"6","text":"## 06_archive — RESTING\nFinished projects, old daily notes.\n\n**Never deleted.** The decisions outlive the project."},
-		{"id":"system","type":"text","x":-580,"y":-80,"width":440,"height":350,"color":"3","text":"## 00_system — STEERING\n\nSits outside the flow and governs all of it.\n\n- `CLAUDE.md` (vault root)\n- `conventions/` — the five rules\n- `templates/` — decided once, not every time\n- `claude_memory/` — behaviour, never facts\n- `log.md` — every input, one line\n- `my_tasks.md` — a query, stores nothing"},
-		{"id":"private","type":"text","x":770,"y":140,"width":340,"height":130,"color":"1","text":"## 07_private\nOutside the flow.\n\n**Not in git.** Fails closed:\nif unsure, it goes here."},
-		{"id":"note","type":"text","x":770,"y":350,"width":340,"height":120,"text":"**The rule that makes it work:**\n\nNothing stays where it landed.\nAn inbox with five things in it\nwas not processed."}
-	],
-	"edges":[
-		{"id":"e1","fromNode":"title","fromSide":"bottom","toNode":"inbox","toSide":"top"},
-		{"id":"e2","fromNode":"inbox","fromSide":"bottom","toNode":"projects","toSide":"top","label":"has an end"},
-		{"id":"e3","fromNode":"inbox","fromSide":"bottom","toNode":"areas","toSide":"top","label":"has no end"},
-		{"id":"e4","fromNode":"projects","fromSide":"bottom","toNode":"knowledge","toSide":"top","label":"worth keeping"},
-		{"id":"e5","fromNode":"areas","fromSide":"bottom","toNode":"knowledge","toSide":"top"},
-		{"id":"e6","fromNode":"knowledge","fromSide":"bottom","toNode":"archive","toSide":"top","label":"superseded"},
-		{"id":"e7","fromNode":"daily","fromSide":"bottom","toNode":"archive","toSide":"right","label":"after 30 days"},
-		{"id":"e8","fromNode":"system","fromSide":"right","toNode":"knowledge","toSide":"left","label":"rules apply everywhere"}
-	]
+  "nodes": [
+    {
+      "id": "title",
+      "type": "text",
+      "x": 0,
+      "y": -440,
+      "width": 640,
+      "height": 120,
+      "text": "# How this vault works\n\nEight folders. Material always flows **downward**."
+    },
+    {
+      "id": "inbox",
+      "type": "text",
+      "x": 0,
+      "y": -260,
+      "width": 640,
+      "height": 110,
+      "color": "1",
+      "text": "## 01_inbox — INPUT\nRaw material. A **buffer, never a storage**.\nThings may wait here.\nThey may not move in."
+    },
+    {
+      "id": "projects",
+      "type": "text",
+      "x": -20,
+      "y": -80,
+      "width": 300,
+      "height": 140,
+      "color": "2",
+      "text": "## 02_projects\nCONTEXT — work that **ends**.\n\nOne folder each.\nOverview + tasks + decisions."
+    },
+    {
+      "id": "areas",
+      "type": "text",
+      "x": 360,
+      "y": -80,
+      "width": 300,
+      "height": 140,
+      "color": "2",
+      "text": "## 03_areas\nCONTEXT — work that **never ends**.\n\nSupport, review, team.\nNo finish line."
+    },
+    {
+      "id": "knowledge",
+      "type": "text",
+      "x": 0,
+      "y": 140,
+      "width": 640,
+      "height": 130,
+      "color": "4",
+      "text": "## 04_knowledge — MEMORY\nThe permanent wiki. Where things **compound**.\n\n`it/` · `people/` · `company/` · `references/`"
+    },
+    {
+      "id": "daily",
+      "type": "text",
+      "x": 770,
+      "y": -80,
+      "width": 340,
+      "height": 140,
+      "color": "5",
+      "text": "## 05_daily_notes\nLOG — what happened, day by day.\n\nRuns **alongside** everything.\nWeekly reports are built from it."
+    },
+    {
+      "id": "archive",
+      "type": "text",
+      "x": 0,
+      "y": 350,
+      "width": 640,
+      "height": 120,
+      "color": "6",
+      "text": "## 06_archive — RESTING\nFinished projects, old daily notes.\n\n**Never deleted.** The decisions outlive the project."
+    },
+    {
+      "id": "system",
+      "type": "text",
+      "x": -580,
+      "y": -80,
+      "width": 440,
+      "height": 350,
+      "color": "3",
+      "text": "## 00_system — STEERING\n\nSits outside the flow and governs all of it.\n\n- `CLAUDE.md` (vault root)\n- `conventions/` — the five rules\n- `templates/` — decided once, not every time\n- `claude_memory/` — behaviour, never facts\n- `log.md` — every input, one line\n- `my_tasks.md` — a query, stores nothing"
+    },
+    {
+      "id": "private",
+      "type": "text",
+      "x": 770,
+      "y": 140,
+      "width": 340,
+      "height": 130,
+      "color": "1",
+      "text": "## 07_private\nOutside the flow.\n\n**Not in git.** Fails closed:\nif unsure, it goes here."
+    },
+    {
+      "id": "note",
+      "type": "text",
+      "x": 770,
+      "y": 350,
+      "width": 340,
+      "height": 120,
+      "text": "**The rule that makes it work:**\n\nNothing stays where it landed.\nEverything here is on its way\nsomewhere else."
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "fromNode": "title",
+      "fromSide": "bottom",
+      "toNode": "inbox",
+      "toSide": "top"
+    },
+    {
+      "id": "e2",
+      "fromNode": "inbox",
+      "fromSide": "bottom",
+      "toNode": "projects",
+      "toSide": "top",
+      "label": "has an end"
+    },
+    {
+      "id": "e3",
+      "fromNode": "inbox",
+      "fromSide": "bottom",
+      "toNode": "areas",
+      "toSide": "top",
+      "label": "has no end"
+    },
+    {
+      "id": "e4",
+      "fromNode": "projects",
+      "fromSide": "bottom",
+      "toNode": "knowledge",
+      "toSide": "top",
+      "label": "worth keeping"
+    },
+    {
+      "id": "e5",
+      "fromNode": "areas",
+      "fromSide": "bottom",
+      "toNode": "knowledge",
+      "toSide": "top"
+    },
+    {
+      "id": "e6",
+      "fromNode": "knowledge",
+      "fromSide": "bottom",
+      "toNode": "archive",
+      "toSide": "top",
+      "label": "superseded"
+    },
+    {
+      "id": "e7",
+      "fromNode": "daily",
+      "fromSide": "bottom",
+      "toNode": "archive",
+      "toSide": "right",
+      "label": "after 30 days"
+    },
+    {
+      "id": "e8",
+      "fromNode": "system",
+      "fromSide": "right",
+      "toNode": "knowledge",
+      "toSide": "left",
+      "label": "rules apply everywhere"
+    }
+  ]
 }
