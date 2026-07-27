@@ -21,7 +21,7 @@ no lock-in. If all three tools disappeared tomorrow, these are still readable te
 
 | Folder | Holds | Ends? |
 |---|---|---|
-| `00_system/` | index, log, templates, conventions, Claude's memory | — |
+| `00_system/` | index, log, templates, conventions, the skills | — |
 | `01_inbox/` | raw material waiting to be processed | emptied every time |
 | `02_projects/` | work with a defined end | yes |
 | `03_areas/` | ongoing responsibility | no |
@@ -31,6 +31,41 @@ no lock-in. If all three tools disappeared tomorrow, these are still readable te
 | `07_private/` | sensitive documents | not in git |
 
 Material flows downward. Nothing lives in the inbox permanently.
+
+## The skills
+
+Seven recurring procedures, each a folder with a `SKILL.md` inside — a text file that says
+what to do, not code:
+
+| Skill | What it does |
+|---|---|
+| `session-start` | pull first, then show what is open |
+| `session-end` | write the daily note, update the log, commit |
+| `ingest` | empty `01_inbox/` into the vault |
+| `cleanup` | weekly maintenance — reports, never repairs silently |
+| `standup` | three sentences for the morning standup |
+| `weekly-report` | build the training record for a calendar week |
+| `invoice` | fill the invoice template and print it to PDF |
+
+They live in [`00_system/skills/`](00_system/skills/) so Obsidian can see them. Claude Code,
+though, loads skills only from `.claude/skills/` — a hardcoded path, and Obsidian hides any
+folder starting with a dot. So each skill gets a link into that folder, and the links are
+**not** in the repo. After cloning, run:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File 00_system\skills_link.ps1
+```
+
+Once per clone, and again whenever a skill is added. Junctions, so no administrator rights.
+
+Tracking those links instead would look tidier and quietly break: git stores a symlink as a
+42-byte text file when `core.symlinks` is off, which is the default on Windows. You end up
+with seven small text files where seven folders should be, and nothing loads — without an
+error message.
+
+**This vault assumes Windows.** Shell examples are PowerShell, the link script is `.ps1`, and
+`.gitattributes` pins line endings to LF in the repository so a Windows clone does not turn
+every file into a diff.
 
 ## Plugins
 
@@ -68,8 +103,11 @@ see that the folders mean different things.
 
 1. [`00_system/index.md`](00_system/index.md) — the map
 2. [`CLAUDE.md`](CLAUDE.md) — how the AI is steered. The most important file in the vault.
-3. [`00_system/conventions/`](00_system/conventions/) — the rules that keep it consistent
-4. Open the graph view in Obsidian and turn off *orphans* and *attachments*
+3. [`00_system/example_prompts.md`](00_system/example_prompts.md) — what to actually type once
+   it is open. Start here if you want to *do* something rather than read.
+4. [`00_system/conventions/`](00_system/conventions/) — the rules that keep it consistent
+5. [`00_system/skills/`](00_system/skills/) — the seven procedures, in plain English
+6. Open the graph view in Obsidian and turn off *orphans* and *attachments*
 
 ## The point
 

@@ -21,21 +21,33 @@ deletions) gets proposed to the user, not executed.
    report it and offer `/ingest`. A buffer with something in it is fine; a buffer with the
    same thing in it three weeks running is not, so say how old each item is.
 
-3. **Compress images.** Find JPGs over 500 KB outside `.git/`:
+3. **Compress images.** Find JPGs over 500 KB outside `.git\`:
 
-   ```bash
-   find . -name "*.jpg" -not -path "./.git/*" -size +500k
+   ```powershell
+   Get-ChildItem -Recurse -File -Filter *.jpg |
+       Where-Object { $_.Length -gt 500KB -and $_.FullName -notlike '*\.git\*' } |
+       Select-Object FullName, @{ n = 'KB'; e = { [int]($_.Length / 1KB) } }
    ```
+
+   `500KB` is a real number literal in PowerShell — no counting zeros.
 
    Resize to 1600px wide, quality 60. Convert PNGs that sit next to notes into JPEG. Report
    the bytes saved.
 
 4. **Check file names** against `00_system/conventions/file_naming.md`:
 
-   ```bash
-   find . -name "*.md" -not -path "./.git/*" -not -path "./.obsidian/*" -not -path "./.claude/*" \
-     | while read f; do b=$(basename "$f"); echo "$b" | grep -qE '[ A-Z]' && echo "$f"; done
+   ```powershell
+   Get-ChildItem -Recurse -File -Filter *.md |
+       Where-Object {
+           $_.FullName -notlike '*\.git\*' -and
+           $_.FullName -notlike '*\.obsidian\*' -and
+           $_.FullName -notlike '*\.claude\*' -and
+           $_.Name -cmatch '[ A-Z]'
+       } | Select-Object FullName
    ```
+
+   `-cmatch` is the case-**sensitive** regex match. Plain `-match` ignores case, which would flag
+   every single file — this check only works with the `c`.
 
    `README.md`, `CLAUDE.md`, `SKILL.md` and `MEMORY.md` are the four allowed exceptions.
    Everything else: report, do not rename — renaming breaks wiki links.

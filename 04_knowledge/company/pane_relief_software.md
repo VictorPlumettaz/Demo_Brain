@@ -42,7 +42,7 @@ They range from family businesses with thirty people and one cutting table to gr
 four plants and three shifts. The small ones use maybe a third of [[paneflow]] and know that
 third extremely well. The big ones use all of it and want more.
 
-Named on this vault: [[glaswerk_nord_overview|Glaswerk Nord GmbH]], Bremen, currently onboarding.
+Named on this vault: [[glaswerk_nord_overview|Glaswerk Nord GmbH]], Hamburg, currently onboarding.
 
 ## How the teams are cut
 

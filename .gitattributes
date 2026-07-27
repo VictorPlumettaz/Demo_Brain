@@ -1,0 +1,11 @@
+# Everything here is text. Store it with LF in the repository, check it out with
+# whatever the platform wants. Without this line a Windows clone rewrites every
+# file to CRLF on save, and the next diff shows 400 changed lines that are not
+# changes at all.
+* text=auto eol=lf
+
+# Binaries: never touch these.
+*.png binary
+*.jpg binary
+*.pdf binary
+*.canvas text eol=lf

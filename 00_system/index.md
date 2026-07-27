@@ -13,7 +13,7 @@ The map of this vault. If you do not know where something is, start here.
 
 | Folder | Holds | Ends? |
 |---|---|---|
-| `00_system/` | the rules: conventions, templates, log, Claude's memory | — |
+| `00_system/` | the rules: conventions, templates, log, skills | — |
 | `01_inbox/` | raw material, not yet processed → [[01_inbox/README\|inbox rules]] | emptied every time |
 | `02_projects/` | work with a defined end | yes |
 | `03_areas/` | ongoing responsibility | no |
@@ -37,7 +37,16 @@ Material flows downward. See [[vault_layers.canvas]] for the picture.
 **Templates:** [[template_project]] · [[template_daily_note]] · [[template_person]] ·
 [[template_meeting]] · [[template_knowledge_page]]
 
-**Claude's memory:** [[MEMORY]] — behaviour rules only, never facts
+**Skills:** `00_system/skills/` — one folder per recurring procedure, each with a `SKILL.md`.
+Seven of them: [[00_system/skills/session-start/SKILL|session-start]] ·
+[[00_system/skills/session-end/SKILL|session-end]] · [[00_system/skills/ingest/SKILL|ingest]] ·
+[[00_system/skills/cleanup/SKILL|cleanup]] · [[00_system/skills/standup/SKILL|standup]] ·
+[[00_system/skills/weekly-report/SKILL|weekly-report]] ·
+[[00_system/skills/invoice/SKILL|invoice]].
+Behaviour rules are **not** here — they live in `CLAUDE.md`.
+Claude Code loads them from `.claude/skills/`, which is filled by `skills_link.ps1`.
+
+**Getting started:** [[example_prompts]] — what to type once the vault is open.
 
 ## Active projects
 
@@ -52,6 +61,7 @@ Material flows downward. See [[vault_layers.canvas]] for the picture.
 - [[product_support_overview]] — second-line support rota
 - [[code_review_overview]] — how review works here
 - [[team_overview]] — meeting rhythm, who owns what
+- [[billing_overview]] — monthly customer invoicing. Register: [[invoice_ledger]]
 
 ## Knowledge
 

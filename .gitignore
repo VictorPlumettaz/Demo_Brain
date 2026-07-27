@@ -3,8 +3,14 @@
 !07_private/README.md
 
 # Claudian conversation history. This is a PUBLIC repo — chat transcripts stay local.
-# The skills under .claude/ are deliberately tracked: they are part of the demo.
 .claudian/
+
+# The skills themselves live at 00_system/skills/ and ARE tracked — they are part
+# of the demo. What is ignored is only the link folder Claude Code loads from:
+# those links are per-machine and get created by 00_system/skills_link.ps1.
+# Tracking them used to break every Windows clone (git stores a symlink as a
+# 42-byte text file when core.symlinks is off, and Claude Code loads nothing).
+.claude/skills/
 .obsidian/plugins/realclaudian/data.json
 
 # Obsidian workspace state (per-device, not worth syncing)
@@ -25,6 +31,11 @@
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Generated invoices. The markdown source and the ledger are the truth and stay in git;
+# the PDF is reproducible from them in one command, and a binary that changes on every
+# regeneration bloats the history for nothing.
+03_areas/billing/pdf/
 
 # Binaries do not belong in a text repo
 *.exe
