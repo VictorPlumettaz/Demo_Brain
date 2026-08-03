@@ -18,8 +18,8 @@
 .obsidian/workspace-mobile.json
 .obsidian/cache
 
-# Obsidian theme CSS is not ours to redistribute
-.obsidian/themes/*/theme.css
+# Themes are part of the demo setup and must be tracked
+# (no theme files to exclude)
 
 # OS clutter
 .DS_Store
