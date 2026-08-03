@@ -17,11 +17,38 @@ deletions) gets proposed to the user, not executed.
    `git mv`. Weekly reports follow their week once all its days are archived. Archived notes
    older than a year: propose deleting.
 
-2. **Empty the inbox check.** List anything in `01_inbox/`. Do **not** ingest automatically —
+2. **Empty the trash of anything older than 30 days.** Read the `deleted:` date in the
+   frontmatter of every file in `06_archive/trash/` — not the file's modification time, which
+   changes when git touches it. Remove what is past 30 days, keep the rest, and **name every
+   file you removed in the report**. `README.md` stays.
+
+   ```powershell
+   $cutoff = (Get-Date).AddDays(-30)
+   Get-ChildItem 06_archive\trash -Filter *.md |
+     Where-Object { $_.Name -ne 'README.md' } |
+     ForEach-Object {
+       $m = Select-String -Path $_.FullName -Pattern '^deleted:\s*(\d{4}-\d{2}-\d{2})' |
+            Select-Object -First 1
+       if (-not $m)                                  { "NO DATE $($_.Name)" }
+       elseif ([datetime]$m.Matches[0].Groups[1].Value -lt $cutoff) {
+                                                       "PURGE   $($_.Name)" }
+       else                                          { "KEEP    $($_.Name)" }
+     }
+   ```
+
+   > [!warning] This snippet has not been run yet
+   > It was written on a Mac, where PowerShell was not available to test it. Run it once and
+   > check the output against the folder by hand before trusting it — a purge step that
+   > silently matches nothing looks exactly like an empty trash.
+
+   A file in here without a `deleted:` date is a bug — report it, do not guess a date and do
+   not delete it. The 30 days only mean something if the clock is real.
+
+3. **Empty the inbox check.** List anything in `01_inbox/`. Do **not** ingest automatically —
    report it and offer `/ingest`. A buffer with something in it is fine; a buffer with the
    same thing in it three weeks running is not, so say how old each item is.
 
-3. **Compress images.** Find JPGs over 500 KB outside `.git\`:
+4. **Compress images.** Find JPGs over 500 KB outside `.git\`:
 
    ```powershell
    Get-ChildItem -Recurse -File -Filter *.jpg |
@@ -34,7 +61,7 @@ deletions) gets proposed to the user, not executed.
    Resize to 1600px wide, quality 60. Convert PNGs that sit next to notes into JPEG. Report
    the bytes saved.
 
-4. **Check file names** against `00_system/conventions/file_naming.md`:
+5. **Check file names** against `00_system/conventions/file_naming.md`:
 
    ```powershell
    Get-ChildItem -Recurse -File -Filter *.md |
@@ -52,7 +79,7 @@ deletions) gets proposed to the user, not executed.
    `README.md`, `CLAUDE.md`, `SKILL.md` and `MEMORY.md` are the four allowed exceptions.
    Everything else: report, do not rename — renaming breaks wiki links.
 
-5. **Check for files that should never be tracked:**
+6. **Check for files that should never be tracked:**
 
    ```bash
    git ls-files '*.DS_Store' '*.tmp' '*~' '*.m4a' '*.mp3' '*.wav'
@@ -60,26 +87,30 @@ deletions) gets proposed to the user, not executed.
 
    If anything shows up: `git rm --cached`, and check `.gitignore` covers it going forward.
 
-6. **Frontmatter check.** Find markdown files whose first line is not `---`. Report them with
+7. **Frontmatter check.** Find markdown files whose first line is not `---`. Report them with
    a proposed header.
 
-7. **Find orphans — the point of the graph.** Pages nothing links to, and pages that link
+8. **Find orphans — the point of the graph.** Pages nothing links to, and pages that link
    nowhere. These are notes that were filed and never used again. Report them; the user
    decides whether to link, merge or delete.
 
-8. **Check the conventions against reality.** Pick one convention file and verify the vault
+9. **Check the conventions against reality.** Pick one convention file and verify the vault
    still follows it. Conventions rot faster than notes, because nothing errors when they are
    broken.
 
-9. **Commit and collect garbage.**
+10. **Commit and collect garbage.**
 
    ```bash
    git add . && git commit -m "cleanup: weekly maintenance kw<NR>"
    git gc
    ```
 
-10. **Report** — archived notes, images compressed and bytes saved, naming violations,
-    missing frontmatter, orphans, inbox age, vault size before and after.
+11. **Report** — archived notes, **files purged from the trash by name**, images compressed and
+    bytes saved, naming violations, missing frontmatter, orphans, inbox age, vault size before
+    and after.
+
+    Purged files get named individually, not counted. "Removed 3 files" is not something I can
+    check; a list is. This is the only step in the pass that destroys anything.
 
 ## Why this exists
 

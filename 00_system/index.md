@@ -19,7 +19,7 @@ The map of this vault. If you do not know where something is, start here.
 | `03_areas/` | ongoing responsibility | no |
 | `04_knowledge/` | the permanent wiki | never |
 | `05_daily_notes/` | what happened, day by day | archived after 30 days |
-| `06_archive/` | finished, resting | — |
+| `06_archive/` | finished, resting — plus `trash/` → [[06_archive/trash/README\|the 30-day wait]] | — |
 | `07_private/` | sensitive, not in git → [[07_private/README\|what belongs there]] | — |
 
 Material flows downward. See [[vault_layers.canvas]] for the picture.
@@ -80,6 +80,7 @@ Start at a map of content rather than at a file:
 
 - [[legacy_report_export_overview]] — shipped June 2026 · [[legacy_report_export_retrospective]]
 - `06_archive/daily_notes/2026_kw30/` — daily notes older than 30 days
+- `06_archive/trash/` — deleted, waiting out 30 days → [[06_archive/trash/README|the rule]]. Currently one item, purge date 2026-09-14
 
 ---
 

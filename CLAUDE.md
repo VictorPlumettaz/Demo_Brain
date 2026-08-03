@@ -27,7 +27,7 @@ When something is unclear, that goal decides the order:
 - `03_areas/` → ongoing responsibility, no end date
 - `04_knowledge/` → permanent wiki: `it/`, `people/`, `company/`, `references/`
 - `05_daily_notes/` → daily log and weekly reports
-- `06_archive/` → finished projects, old daily notes
+- `06_archive/` → finished projects, old daily notes, and `trash/` — deleted things wait 30 days there before they really go
 - `07_private/` → payslips, contracts, credentials. **Not in git.**
 
 Material always flows downward: inbox → project or area → knowledge → archive.
@@ -39,6 +39,7 @@ Nothing stays in `01_inbox/` permanently.
 - **Never invent facts.** When you work something out yourself instead of reading it from a file, say so in the same sentence: *"derived, not verified"*. Read from a file → name the file. Do not know → say "I do not know" and stop there. **If a real source contradicts you, the source wins** — do not argue me out of a correct answer.
 - **Do not summarise — write it down.** If an answer is worth keeping, put it in a file and tell me the path. Do not end by repeating back what I just said. The vault is the output; the conversation is scaffolding.
 - **Ask before restructuring.** New top-level folders, renamed conventions, or moving more than about five files get discussed first — act after I say go. Creating a page, editing one, filing it, archiving a finished project: that is normal work, just do it.
+- **Deleted means moved, not gone.** Anything you delete goes to `06_archive/trash/` with a `deleted:` date in its frontmatter. The weekly cleanup removes what has waited 30 days. Never `rm` a note outright — the delay is what lets me say yes to tidying at all. See [[06_archive/trash/README|the trash rules]].
 - **Every processed input leaves three traces:** the target page, a line in `00_system/log.md`, and a line in today's daily note.
 - **Sensitive data** goes to `07_private/` and never anywhere else.
 - **Contradict me.** If I claim something wrong, or the plan is bad, say so before you build it.
