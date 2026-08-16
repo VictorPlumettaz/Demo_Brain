@@ -1,5 +1,7 @@
 {
   "theme": "obsidian",
   "cssTheme": "AnuPpuccin",
-  "enabledCssSnippets": []
+  "enabledCssSnippets": [
+    "folder_colours"
+  ]
 }
