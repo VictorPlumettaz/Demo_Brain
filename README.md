@@ -110,13 +110,20 @@ here: **the files have to survive it being uninstalled.**
 
 ## Theme
 
-**AnuPpuccin** by Anubis, with `Full rainbow` folder colouring enabled through Style Settings.
-That is where the coloured folders in the file explorer come from — they are not a feature of
-Obsidian and not stored in the files.
+**AnuPpuccin** by Anubis (GPL-3.0). The theme itself is in the repo at
+`.obsidian/themes/AnuPpuccin/`, licence beside it, and `appearance.json` already selects it —
+nothing to install.
 
-Install the theme from *Appearance → Themes → Browse*. The settings are already in
-`.obsidian/appearance.json` and `.obsidian/plugins/obsidian-style-settings/data.json`, so it
-should look right as soon as the theme is present.
+The coloured folders are **not** the theme's `Full rainbow` option any more. That one only
+works while the Style Settings plugin is installed, and that plugin ships without a licence, so
+it is not in this repo — a fresh clone showed grey folders. They now come from
+[`.obsidian/snippets/folder_colours.css`](.obsidian/snippets/folder_colours.css): plain CSS, no
+plugin, no dependency.
+
+The colours in that snippet are deliberately **the same ones the graph view uses**, so the
+sidebar and the graph tell the same story: colour = folder. The five folders the graph filters
+out — system, inbox, daily notes, archive, private — are muted in the sidebar too, on purpose.
+They are the ones that link to everything, which is why the graph hides them.
 
 Purely cosmetic, and worth it anyway: on a projector, colour is the fastest way for a room to
 see that the folders mean different things.

@@ -1,0 +1,65 @@
+/* Folder colours for the file explorer — Demo_Brain
+ *
+ * Why this exists: the coloured folders used to come from the AnuPpuccin theme's
+ * "Full rainbow" option, which only works while the Style Settings plugin is
+ * installed. That plugin ships without a licence, so it is not in this repo, and
+ * a fresh clone showed grey folders. This snippet does the same job with plain
+ * CSS: no plugin, no dependency, works the moment you open the vault.
+ *
+ * The colours are deliberately the same ones the graph view uses (graph.json),
+ * so the sidebar and the graph tell the same story: colour = folder.
+ *
+ * The five folders the graph filters out (system, inbox, daily notes, archive,
+ * private) are muted here on purpose. They are the ones that link to everything,
+ * which is exactly why the graph hides them — see the talk, slide 34.
+ *
+ * Enable under Settings → Appearance → CSS snippets.
+ */
+
+/* --- the three that carry the work ------------------------------------- */
+
+.nav-folder-title[data-path="02_projects"] .nav-folder-title-content,
+.nav-folder-title[data-path="02_projects"] .collapse-icon svg { color: #f9b387; }
+
+.nav-folder-title[data-path="03_areas"] .nav-folder-title-content,
+.nav-folder-title[data-path="03_areas"] .collapse-icon svg { color: #f9e2af; }
+
+.nav-folder-title[data-path="04_knowledge"] .nav-folder-title-content,
+.nav-folder-title[data-path="04_knowledge"] .collapse-icon svg { color: #cdd6f4; }
+
+/* --- knowledge, split exactly like the graph splits it ------------------ */
+
+.nav-folder-title[data-path="04_knowledge/it"] .nav-folder-title-content,
+.nav-folder-title[data-path="04_knowledge/it"] .collapse-icon svg { color: #a6e3a1; }
+
+.nav-folder-title[data-path="04_knowledge/people"] .nav-folder-title-content,
+.nav-folder-title[data-path="04_knowledge/people"] .collapse-icon svg { color: #e0528f; }
+
+/* NOTE: #2f17e8 matches graph.json, but on a dark sidebar it measures 1.88:1
+ * against the background — WCAG asks for 4.5:1, so this line is hard to read.
+ * A readable blue that keeps the same identity: #89b4fa (7.79:1). Change it
+ * here AND in graph.json, otherwise the two stop matching. */
+.nav-folder-title[data-path="04_knowledge/company"] .nav-folder-title-content,
+.nav-folder-title[data-path="04_knowledge/company"] .collapse-icon svg { color: #2f17e8; }
+
+.nav-folder-title[data-path="04_knowledge/references"] .nav-folder-title-content,
+.nav-folder-title[data-path="04_knowledge/references"] .collapse-icon svg { color: #52b1e0; }
+
+/* --- the ones the graph hides: muted, and that is the point ------------- */
+
+.nav-folder-title[data-path="00_system"] .nav-folder-title-content,
+.nav-folder-title[data-path="01_inbox"] .nav-folder-title-content,
+.nav-folder-title[data-path="05_daily_notes"] .nav-folder-title-content,
+.nav-folder-title[data-path="06_archive"] .nav-folder-title-content,
+.nav-folder-title[data-path="07_private"] .nav-folder-title-content,
+.nav-folder-title[data-path="00_system"] .collapse-icon svg,
+.nav-folder-title[data-path="01_inbox"] .collapse-icon svg,
+.nav-folder-title[data-path="05_daily_notes"] .collapse-icon svg,
+.nav-folder-title[data-path="06_archive"] .collapse-icon svg,
+.nav-folder-title[data-path="07_private"] .collapse-icon svg { color: #8e94aa; }
+
+/* Top level a little heavier, so the eight folders read as the structure
+ * rather than as a list of names. */
+.nav-files-container > div > .nav-folder > .nav-folder-title .nav-folder-title-content {
+    font-weight: 600;
+}
