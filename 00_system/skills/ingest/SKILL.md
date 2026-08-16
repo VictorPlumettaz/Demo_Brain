@@ -40,7 +40,7 @@ Turn raw material into knowledge. The inbox is a buffer — after this runs, it 
 7. **Empty the inbox.** If something cannot be processed, say why and leave exactly that
    one item. An inbox that still has five things in it did not get processed.
 
-8. **Commit:** `git add . && git commit && git push`
+8. **Commit:** `git add . && git commit`. Do not push — pushing is a separate, explicit step.
 
 ## Rules
 

@@ -43,8 +43,8 @@ first, because everything after it reads from it.
 5. **Check `CLAUDE.md`.** Did folders move, did a new convention appear, did a rule turn out
    wrong? Fix it now, while the reason is still fresh, and say what was changed.
 
-6. **Commit.** `git add . && git commit -m "session: <two to five keywords>"`. Push if the
-   vault has a remote.
+6. **Commit.** `git add . && git commit -m "session: <two to five keywords>"`. Do not push —
+   pushing is a separate, explicit step.
 
 ## Edge cases
 
