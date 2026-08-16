@@ -77,23 +77,31 @@ The link script exists for both worlds: `skills_link.ps1` and `skills_link.sh`.
 
 ## Plugins
 
-The repo carries each plugin's `manifest.json` and `data.json` — so you can see exactly which
-plugins, which versions and which settings — but **not** the plugin code. That is not ours to
-redistribute, and megabytes of bundled JavaScript do not belong in a text repo.
+The repo carries each plugin's `manifest.json` and `data.json` — which plugin, which version,
+which settings. Whether the **code** comes along depends on the licence:
 
-That rule slipped once: on 3 August a commit swept all six plugin bundles into the repo, 5.5 MB
-of someone else's JavaScript with not one licence file next to it. Taken back out on 16 August.
-Worth knowing why, because it is the sort of thing that looks harmless:
-
-| Plugin | Licence | What that means for a public repo |
+| Plugin | Licence | In this repo |
 |---|---|---|
-| Style Settings | **none** | no licence means full copyright — redistribution is simply not allowed |
-| Templater | AGPL-3.0 | copyleft, drags obligations onto whatever ships it |
-| Front Matter Title | GPL-3.0 | same |
-| Dataview, BRAT, Claudian | MIT | allowed, but only together with the licence text — which was never included |
+| [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) | MIT | **yes** — the coloured folders stop working without it |
+| [Dataview](https://github.com/blacksmithgu/obsidian-dataview) | MIT | **yes** — `my_tasks.md` is just code blocks without it |
+| [BRAT](https://github.com/TfTHacker/obsidian42-brat) | MIT | yes |
+| [Claudian](https://github.com/YishenTu/claudian) | MIT | yes |
+| [Templater](https://github.com/SilentVoid13/Templater) | AGPL-3.0 | no — install from the store |
+| [Front Matter Title](https://github.com/snezhig/obsidian-front-matter-title) | GPL-3.0 | no — install from the store |
 
-Claudian's `data.json` is excluded as well, for a different reason: it holds the chat history,
-not settings, and this repo is public.
+MIT allows redistribution as long as the source is named, which the table does. Copyleft asks
+for **source**, and a minified bundle is not source — 164 lines at roughly 936 characters each
+is a build artefact nobody can read or change. Those two you install yourself; everything else
+works the moment you clone.
+
+One wrong turn worth recording, because it is the kind that looks like diligence: on 16 August
+all six bundles were removed after a licence check reported Style Settings as having **no
+licence at all**. That came from GitHub's licence API, which returns nothing when a repo has no
+standard `LICENSE` file. Its `package.json` says MIT. One source checked, the other not — and
+the result was grey folders in every clone until somebody noticed.
+
+Claudian's `data.json` stays out for a different reason entirely: it holds the chat history, not
+settings, and this repo is public.
 
 | Plugin | Why | Install |
 |---|---|---|
@@ -110,20 +118,15 @@ here: **the files have to survive it being uninstalled.**
 
 ## Theme
 
-**AnuPpuccin** by Anubis (GPL-3.0). The theme itself is in the repo at
-`.obsidian/themes/AnuPpuccin/`, licence beside it, and `appearance.json` already selects it —
-nothing to install.
+**AnuPpuccin** by Anubis (GPL-3.0). The theme is in the repo at
+`.obsidian/themes/AnuPpuccin/` with its licence beside it — `theme.css` is readable source,
+9080 lines of it, which is exactly what copyleft asks you to pass on. `appearance.json` already
+selects it, so there is nothing to install.
 
-The coloured folders are **not** the theme's `Full rainbow` option any more. That one only
-works while the Style Settings plugin is installed, and that plugin ships without a licence, so
-it is not in this repo — a fresh clone showed grey folders. They now come from
-[`.obsidian/snippets/folder_colours.css`](.obsidian/snippets/folder_colours.css): plain CSS, no
-plugin, no dependency.
-
-The colours in that snippet are deliberately **the same ones the graph view uses**, so the
-sidebar and the graph tell the same story: colour = folder. The five folders the graph filters
-out — system, inbox, daily notes, archive, private — are muted in the sidebar too, on purpose.
-They are the ones that link to everything, which is why the graph hides them.
+The coloured folders come from the theme's `Full rainbow` option, switched on through **Style
+Settings**. The setting lives in
+`.obsidian/plugins/obsidian-style-settings/data.json` and the plugin ships with the repo, so
+this works on a fresh clone with nothing to configure.
 
 Purely cosmetic, and worth it anyway: on a projector, colour is the fastest way for a room to
 see that the folders mean different things.

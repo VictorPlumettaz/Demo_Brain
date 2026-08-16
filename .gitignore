@@ -15,20 +15,21 @@
 # Claudian's own data.json holds the chat history, not settings. Public repo.
 .obsidian/plugins/realclaudian/data.json
 
-# Plugin CODE is not ours to redistribute. Tracked per plugin are only
-# manifest.json (which plugin, which version) and data.json (our settings) —
-# both small, both ours to share. The bundles are not:
-#   - obsidian-style-settings has NO licence at all, so redistribution is simply
-#     not permitted
-#   - Templater is AGPL-3.0 and front-matter-title is GPL-3.0 — copyleft, which
-#     drags obligations onto this repo
-#   - dataview, BRAT and Claudian are MIT, which allows redistribution but only
-#     together with the licence text, which was never included
-# They were swept in by 77a01ff on 2026-08-03 (5.5 MB, zero licence files) and
-# taken back out on 2026-08-16. Install the plugins from the store or via BRAT —
-# the README says which.
-.obsidian/plugins/*/main.js
-.obsidian/plugins/*/styles.css
+# Plugin bundles: it depends on the licence, so this is per plugin.
+#
+# Shipped, because MIT allows redistribution and the README names the source:
+#   obsidian-style-settings, dataview, obsidian42-brat, realclaudian
+#   Style Settings has no LICENSE file in its repo, which is why a first pass on
+#   2026-08-16 wrongly read it as "no licence at all" and dropped it. Its
+#   package.json says MIT. Checking one source and not the other cost the
+#   coloured folders in every clone until it was noticed.
+#
+# Not shipped, because copyleft asks for source and a minified bundle is not
+# source (164 lines at ~936 characters is a build artefact, not something anyone
+# can read or change):
+.obsidian/plugins/templater-obsidian/main.js
+.obsidian/plugins/templater-obsidian/styles.css
+.obsidian/plugins/obsidian-front-matter-title-plugin/main.js
 
 # Obsidian workspace state (per-device, not worth syncing)
 .obsidian/workspace.json
