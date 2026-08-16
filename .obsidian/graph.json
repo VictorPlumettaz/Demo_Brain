@@ -11,28 +11,28 @@
       "query": "path:02_projects",
       "color": {
         "a": 1,
-        "rgb": 16096779
+        "rgb": 9344170
       }
     },
     {
       "query": "path:03_areas",
       "color": {
         "a": 1,
-        "rgb": 3900150
+        "rgb": 9344170
       }
     },
     {
       "query": "path:04_knowledge/people",
       "color": {
         "a": 1,
-        "rgb": 15235577
+        "rgb": 13206784
       }
     },
     {
       "query": "path:04_knowledge/it OR path:04_knowledge/company OR path:04_knowledge/references",
       "color": {
         "a": 1,
-        "rgb": 2278750
+        "rgb": 9344170
       }
     }
   ],
