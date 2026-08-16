@@ -11,7 +11,24 @@
 # Tracking them used to break every Windows clone (git stores a symlink as a
 # 42-byte text file when core.symlinks is off, and Claude Code loads nothing).
 .claude/skills/
+
+# Claudian's own data.json holds the chat history, not settings. Public repo.
 .obsidian/plugins/realclaudian/data.json
+
+# Plugin CODE is not ours to redistribute. Tracked per plugin are only
+# manifest.json (which plugin, which version) and data.json (our settings) —
+# both small, both ours to share. The bundles are not:
+#   - obsidian-style-settings has NO licence at all, so redistribution is simply
+#     not permitted
+#   - Templater is AGPL-3.0 and front-matter-title is GPL-3.0 — copyleft, which
+#     drags obligations onto this repo
+#   - dataview, BRAT and Claudian are MIT, which allows redistribution but only
+#     together with the licence text, which was never included
+# They were swept in by 77a01ff on 2026-08-03 (5.5 MB, zero licence files) and
+# taken back out on 2026-08-16. Install the plugins from the store or via BRAT —
+# the README says which.
+.obsidian/plugins/*/main.js
+.obsidian/plugins/*/styles.css
 
 # Obsidian workspace state (per-device, not worth syncing)
 .obsidian/workspace.json

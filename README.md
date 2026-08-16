@@ -79,7 +79,21 @@ The link script exists for both worlds: `skills_link.ps1` and `skills_link.sh`.
 
 The repo carries each plugin's `manifest.json` and `data.json` — so you can see exactly which
 plugins, which versions and which settings — but **not** the plugin code. That is not ours to
-redistribute, and binaries do not belong in a text repo.
+redistribute, and megabytes of bundled JavaScript do not belong in a text repo.
+
+That rule slipped once: on 3 August a commit swept all six plugin bundles into the repo, 5.5 MB
+of someone else's JavaScript with not one licence file next to it. Taken back out on 16 August.
+Worth knowing why, because it is the sort of thing that looks harmless:
+
+| Plugin | Licence | What that means for a public repo |
+|---|---|---|
+| Style Settings | **none** | no licence means full copyright — redistribution is simply not allowed |
+| Templater | AGPL-3.0 | copyleft, drags obligations onto whatever ships it |
+| Front Matter Title | GPL-3.0 | same |
+| Dataview, BRAT, Claudian | MIT | allowed, but only together with the licence text — which was never included |
+
+Claudian's `data.json` is excluded as well, for a different reason: it holds the chat history,
+not settings, and this repo is public.
 
 | Plugin | Why | Install |
 |---|---|---|
