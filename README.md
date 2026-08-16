@@ -77,28 +77,33 @@ The link script exists for both worlds: `skills_link.ps1` and `skills_link.sh`.
 
 ## Plugins
 
-The repo carries each plugin's `manifest.json` and `data.json` — which plugin, which version,
-which settings. Whether the **code** comes along depends on the licence:
+All six ship with the vault — code, `manifest.json` and settings — so cloning gives you a
+working vault, not a shopping list. Each one carries its licence file at
+`.obsidian/plugins/<id>/LICENSE`, and here is where it came from:
 
-| Plugin | Licence | In this repo |
+| Plugin | Licence | Why it is here |
 |---|---|---|
-| [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) | MIT | **yes** — the coloured folders stop working without it |
-| [Dataview](https://github.com/blacksmithgu/obsidian-dataview) | MIT | **yes** — `my_tasks.md` is just code blocks without it |
-| [BRAT](https://github.com/TfTHacker/obsidian42-brat) | MIT | yes |
-| [Claudian](https://github.com/YishenTu/claudian) | MIT | yes |
-| [Templater](https://github.com/SilentVoid13/Templater) | AGPL-3.0 | no — install from the store |
-| [Front Matter Title](https://github.com/snezhig/obsidian-front-matter-title) | GPL-3.0 | no — install from the store |
+| [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) | GPL-3.0 | the coloured folders stop working without it |
+| [Dataview](https://github.com/blacksmithgu/obsidian-dataview) | MIT | `my_tasks.md` is just code blocks without it |
+| [Templater](https://github.com/SilentVoid13/Templater) | AGPL-3.0 | fills dates in the templates |
+| [Front Matter Title](https://github.com/snezhig/obsidian-front-matter-title) | GPL-3.0 | shows `title:` instead of the filename |
+| [Claudian](https://github.com/YishenTu/claudian) | MIT | Claude Code in a side pane |
+| [BRAT](https://github.com/TfTHacker/obsidian42-brat) | MIT | installs Claudian, which is not in the store |
 
-MIT allows redistribution as long as the source is named, which the table does. Copyleft asks
-for **source**, and a minified bundle is not source — 164 lines at roughly 936 characters each
-is a build artefact nobody can read or change. Those two you install yourself; everything else
-works the moment you clone.
+MIT wants the notice passed along; GPL-3.0 and AGPL-3.0 want the source reachable, and §6(d)
+allows that through the public repos linked above. Everything still works without any of them —
+a Dataview block degrades to a visible code block. That is the test a plugin has to pass to get
+in here: **the files have to survive it being uninstalled.**
 
-One wrong turn worth recording, because it is the kind that looks like diligence: on 16 August
-all six bundles were removed after a licence check reported Style Settings as having **no
-licence at all**. That came from GitHub's licence API, which returns nothing when a repo has no
-standard `LICENSE` file. Its `package.json` says MIT. One source checked, the other not — and
-the result was grey folders in every clone until somebody noticed.
+One thing a clone cannot bring: the first time you open the vault, Obsidian asks whether to
+trust the author and enable plugins. That answer lives on your machine, not in the repo, and it
+should — otherwise downloading a folder would quietly run somebody else's JavaScript.
+
+**A licence is worth reading twice.** On 16 August all six bundles were removed because
+GitHub's licence API reported Style Settings as having none — it returns nothing when a repo has
+no file called exactly `LICENSE`. Its `package.json` says MIT. Its `LICENSE.md`, which is what
+governs, says GPL-3.0. Three sources, three answers, and the first one taken at face value cost
+every clone its folder colours.
 
 Claudian's `data.json` stays out for a different reason entirely: it holds the chat history, not
 settings, and this repo is public.

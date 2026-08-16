@@ -15,21 +15,20 @@
 # Claudian's own data.json holds the chat history, not settings. Public repo.
 .obsidian/plugins/realclaudian/data.json
 
-# Plugin bundles: it depends on the licence, so this is per plugin.
+# All six plugin bundles ship with the vault, each with its LICENSE file beside
+# it and its upstream repo named in the README. MIT wants the notice passed on;
+# GPL-3.0 and AGPL-3.0 want the source reachable, which §6(d) satisfies through
+# the public repo the README links to. Nothing here is ignored on purpose.
 #
-# Shipped, because MIT allows redistribution and the README names the source:
-#   obsidian-style-settings, dataview, obsidian42-brat, realclaudian
-#   Style Settings has no LICENSE file in its repo, which is why a first pass on
-#   2026-08-16 wrongly read it as "no licence at all" and dropped it. Its
-#   package.json says MIT. Checking one source and not the other cost the
-#   coloured folders in every clone until it was noticed.
-#
-# Not shipped, because copyleft asks for source and a minified bundle is not
-# source (164 lines at ~936 characters is a build artefact, not something anyone
-# can read or change):
-.obsidian/plugins/templater-obsidian/main.js
-.obsidian/plugins/templater-obsidian/styles.css
-.obsidian/plugins/obsidian-front-matter-title-plugin/main.js
+# This took three tries on 2026-08-16, and the lesson is worth more than the
+# outcome: never read a licence from one place.
+#   - GitHub's licence API says "none" for Style Settings, because there is no
+#     file literally called LICENSE. Acting on that dropped every plugin bundle
+#     and left grey folders in every clone.
+#   - Its package.json says MIT. Acting on THAT would have been wrong too.
+#   - LICENSE.md, which is what actually governs, is GPL-3.0.
+# Also: grepping a licence text for "Affero" misclassifies every GPL-3.0 file,
+# because §13 of GPL-3.0 mentions the AGPL by name. Read the title line.
 
 # Obsidian workspace state (per-device, not worth syncing)
 .obsidian/workspace.json
