@@ -11,28 +11,42 @@
       "query": "path:02_projects",
       "color": {
         "a": 1,
-        "rgb": 9344170
+        "rgb": 16364423
       }
     },
     {
       "query": "path:03_areas",
       "color": {
         "a": 1,
-        "rgb": 9344170
+        "rgb": 16376495
       }
     },
     {
-      "query": "path:04_knowledge/people",
+      "query": "path:04_knowledge/it  ",
       "color": {
         "a": 1,
-        "rgb": 13206784
+        "rgb": 10937249
       }
     },
     {
-      "query": "path:04_knowledge/it OR path:04_knowledge/company OR path:04_knowledge/references",
+      "query": "path:04_knowledge/people  ",
       "color": {
         "a": 1,
-        "rgb": 9344170
+        "rgb": 14701199
+      }
+    },
+    {
+      "query": "path:04_knowledge/company  ",
+      "color": {
+        "a": 1,
+        "rgb": 3086312
+      }
+    },
+    {
+      "query": "path:04_knowledge/references  ",
+      "color": {
+        "a": 1,
+        "rgb": 5419488
       }
     }
   ],
