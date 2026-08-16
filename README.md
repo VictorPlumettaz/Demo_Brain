@@ -1,6 +1,6 @@
 # Demo_Brain
 
-A demonstration vault for the talk **"AI as a Second Brain"** (26 August 2026).
+A demonstration vault for the talk **"AI as a Second Brain"** (27 August 2026).
 
 Everything in here is fictional. **Pane Relief Software Ltd.** does not exist, neither do its
 employees, its customers, or its coffee machine. The structure, the conventions and the
@@ -49,23 +49,31 @@ what to do, not code:
 
 They live in [`00_system/skills/`](00_system/skills/) so Obsidian can see them. Claude Code,
 though, loads skills only from `.claude/skills/` — a hardcoded path, and Obsidian hides any
-folder starting with a dot. So each skill gets a link into that folder, and the links are
-**not** in the repo. After cloning, run:
+folder starting with a dot. Neither side gives way, so each skill gets a link into that folder.
 
-```powershell
-powershell -ExecutionPolicy Bypass -File 00_system\skills_link.ps1
+**You do not have to do anything for this.** [`.claude/settings.json`](.claude/settings.json)
+is tracked and runs the link script on every session start, on Windows and on macOS or Linux
+alike. Clone, open Claude Code, done.
+
+One catch worth knowing: skills are read at startup, so the very first session after a clone
+still starts without them. The script says so when it happens:
+
+```
+NOTE: 7 vault skill(s) were just linked into .claude/skills/.
+They load on the NEXT start of Claude Code — restart once to use them.
 ```
 
-Once per clone, and again whenever a skill is added. Junctions, so no administrator rights.
+Restart once and it is set up for good. After that the script is silent — it only speaks when
+it actually created something.
 
-Tracking those links instead would look tidier and quietly break: git stores a symlink as a
-42-byte text file when `core.symlinks` is off, which is the default on Windows. You end up
-with seven small text files where seven folders should be, and nothing loads — without an
-error message.
+Tracking the links themselves instead would look tidier and quietly break: git stores a symlink
+as a 42-byte text file when `core.symlinks` is off, which is the default on Windows. You end up
+with seven small text files where seven folders should be, and nothing loads — without an error
+message. That is why the links are generated on your machine and never travel in the repo.
 
-**This vault assumes Windows.** Shell examples are PowerShell, the link script is `.ps1`, and
-`.gitattributes` pins line endings to LF in the repository so a Windows clone does not turn
-every file into a diff.
+**This vault was built on Windows.** Shell examples are PowerShell and `.gitattributes` pins
+line endings to LF in the repository, so a Windows clone does not turn every file into a diff.
+The link script exists for both worlds: `skills_link.ps1` and `skills_link.sh`.
 
 ## Plugins
 

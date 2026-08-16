@@ -57,19 +57,19 @@ graph. Claude Code, however, loads skills only from `.claude/skills/`: that path
 and Obsidian hides every folder whose name starts with a dot. Neither side gives way, so each
 skill gets a link in `.claude/skills/` pointing at the real folder.
 
-**Those links are not tracked in git.** They are created per machine:
+**Those links are not tracked in git — they are created per machine, automatically.**
+`.claude/settings.json` is tracked and carries a `SessionStart` hook that runs the link script
+on every start: `skills_link.ps1` on Windows (junctions, no administrator rights),
+`skills_link.sh` on macOS and Linux. The command for the other platform fails harmlessly and
+does not stop the session. Nobody has to remember a setup step.
 
-```powershell
-powershell -ExecutionPolicy Bypass -File 00_system\skills_link.ps1
-```
-
-Run it once per fresh clone, and again after adding a skill. It uses junctions, which need no
-administrator rights.
+Skills are read at startup, so a newly linked skill only loads on the **next** start. The
+script prints a note when that happens and stays silent otherwise.
 
 Why not simply track the links? Because git stores a symlink as a 42-byte text file when
 `core.symlinks` is off — the default on Windows. The clone then holds a handful of tiny text
 files where the folders should be, and Claude Code loads nothing at all, without an error
-message.
+message. Generating them locally avoids that completely: git never carries a symlink here.
 
 ## Workflows
 

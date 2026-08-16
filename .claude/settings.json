@@ -1,0 +1,27 @@
+{
+  "$comment": [
+    "Tracked on purpose. Only .claude/skills/ is gitignored, this file is not.",
+    "On every session start, link the real skills from 00_system/skills/ (visible in",
+    "Obsidian) into .claude/skills/ (where Claude Code looks). Both commands are listed;",
+    "the one for the other platform fails harmlessly and does not stop the session.",
+    "Git never carries a symlink, so the Windows 42-byte-stub problem cannot return.",
+    "First session after a clone still starts without the skills — they are read at",
+    "startup and the hook is a moment too late. The script says so when that happens."
+  ],
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh \"$CLAUDE_PROJECT_DIR/00_system/skills_link.sh\""
+          },
+          {
+            "type": "command",
+            "command": "powershell -ExecutionPolicy Bypass -File 00_system\\skills_link.ps1"
+          }
+        ]
+      }
+    ]
+  }
+}

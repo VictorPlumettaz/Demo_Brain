@@ -6,11 +6,16 @@
 #   So the real files live at 00_system/skills/ (visible, searchable, in the graph)
 #   and this script puts a link for each one where Claude Code looks.
 #
+# You do not normally run this by hand: .claude/settings.json calls it on every
+# session start. It is idempotent — running it again changes nothing and says nothing.
+#
 # Junctions, not symlinks: a junction needs no administrator rights on Windows.
-# The links themselves are NOT tracked in git — see .gitignore. Run this once per
-# fresh clone, and again after adding a new skill.
+# The links are NOT tracked in git (see .gitignore). Git never carries a symlink
+# here, so the "42-byte text file" problem cannot come back.
 #
 #   powershell -ExecutionPolicy Bypass -File 00_system\skills_link.ps1
+#
+# Counterpart for macOS and Linux: 00_system/skills_link.sh
 
 $system = Split-Path -Parent $MyInvocation.MyCommand.Path   # ...\00_system
 $vault  = Split-Path -Parent $system                        # vault root
@@ -18,11 +23,18 @@ $target = Join-Path $vault '.claude\skills'
 
 New-Item -ItemType Directory -Path $target -Force | Out-Null
 
-$count = 0
+$created = 0
 Get-ChildItem (Join-Path $system 'skills') -Directory | ForEach-Object {
-    New-Item -ItemType Junction -Path (Join-Path $target $_.Name) -Target $_.FullName -Force | Out-Null
-    Write-Host "  junction  $($_.Name)"
-    $count++
+    $link = Join-Path $target $_.Name
+    if (-not (Test-Path $link)) { $created++ }
+    New-Item -ItemType Junction -Path $link -Target $_.FullName -Force | Out-Null
 }
 
-Write-Host "Done: $count skills linked into $target"
+# Only speak up when something actually changed. Skills are read at startup, so a
+# freshly linked skill is not available until Claude Code is restarted once.
+if ($created -gt 0) {
+    Write-Host "NOTE: $created vault skill(s) were just linked into .claude\skills\."
+    Write-Host "They load on the NEXT start of Claude Code - restart once to use them."
+}
+
+exit 0
