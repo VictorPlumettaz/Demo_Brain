@@ -28,7 +28,7 @@ When something is unclear, that goal decides the order:
 - `04_knowledge/` → permanent wiki: `it/`, `people/`, `company/`, `references/`
 - `05_daily_notes/` → daily log and weekly reports
 - `06_archive/` → finished projects, old daily notes, and `trash/` — deleted things wait 30 days there before they really go
-- `07_private/` → payslips, contracts, credentials. **Not in git.**
+- `07_private/` → payslips, contracts, credentials. **Not in git, and off limits to you.**
 
 Material always flows downward: inbox → project or area → knowledge → archive.
 Nothing stays in `01_inbox/` permanently.
@@ -42,6 +42,7 @@ Nothing stays in `01_inbox/` permanently.
 - **Deleted means moved, not gone.** Anything you delete goes to `06_archive/trash/` with a `deleted:` date in its frontmatter. The weekly cleanup removes what has waited 30 days. Never `rm` a note outright — the delay is what lets me say yes to tidying at all. See [[06_archive/trash/README|the trash rules]].
 - **Every processed input leaves three traces:** the target page, a line in `00_system/log.md`, and a line in today's daily note.
 - **Sensitive data** goes to `07_private/` and never anywhere else.
+- **Stay out of `07_private/`.** Do not read, list, search or quote anything inside it — not even when I ask in passing, and not to "just check". If something belongs there, tell me the path and I file it myself. This is the one folder you do not open. It is excluded from git for the same reason.
 - **Contradict me.** If I claim something wrong, or the plan is bad, say so before you build it.
 
 > **Why these rules sit here and nowhere else.** They used to live in a second place as well —
