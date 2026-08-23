@@ -70,7 +70,7 @@ feature flag until release 12.4. Reason: Priya cannot sign off two engines in on
 ```
 
 ```
-Take 01_inbox/2026_08_19_whiteboard_notes.md and process it. Do not create a page for
+Take 01_inbox/2026_08_27_whiteboard_notes.md and process it. Do not create a page for
 anything that appears only once.
 ```
 

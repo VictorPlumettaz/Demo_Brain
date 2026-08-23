@@ -2,7 +2,7 @@
 title: Coffee Machine API — Findings
 tags: [project, api, findings, security]
 created: 2026-07-11
-updated: 2026-08-20
+updated: 2026-08-24
 ---
 
 # Findings
@@ -109,9 +109,9 @@ Should I have sent that POST? No. I wanted to know whether it would refuse. It d
 That is the finding, and I could not have had the finding without doing the thing I had agreed
 not to do, which is an uncomfortable sentence that I am leaving in.
 
-## What I am doing about it
+## What I did about it
 
-Telling [[nils_putty]] on Monday 24 August, in person, before he finds it in a log and asks me
+Told [[nils_putty]] on Monday 24 August, in person, before he could find it in a log and ask me
 about it in a worse setting.
 
 The reason is not the coffee. The reason is that "an undocumented device on the office network

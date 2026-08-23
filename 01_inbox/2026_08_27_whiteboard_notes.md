@@ -1,14 +1,15 @@
 ---
-title: Whiteboard after standup 19.08
+title: Whiteboard after standup 27.08
 tags: [inbox, raw, unprocessed]
-created: 2026-08-19
-updated: 2026-08-19
+created: 2026-08-27
+updated: 2026-08-27
 ---
 
 photo of the whiteboard, kitchen side, after standup. typed it up before someone wiped it. not
 cleaned up, half of this is other people's handwriting
 
 - opt v2 — bench 112 / 118 still red
+- packing loop 6.4 s, dana asked twice now. "under five or it does not ship"
 - 203 ?? marco said coating flag, did not follow, ask again
 - thickness sort?? he thinks legacy sorts first and we don't
 - "yield is fine, the pattern is ugly" ← whose line, think Dana
@@ -23,7 +24,7 @@ cleaned up, half of this is other people's handwriting
 - cullet numbers last week look 2x too high? or is that just shift count / double shift
 - 812 rejects — dupes or real, need the split before order history
 - "we won't fix that in 12.2" → 12.3 then
-- ??? something about hotfix 12.1 blocking marco til the 25th
+- marco off the 12.1 hotfix since tue — schema hour is booked, do not let it slip again
 
 arrow drawn between "remnant rack" and "812 rejects", no idea what that meant
 
