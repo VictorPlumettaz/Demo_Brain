@@ -6,10 +6,10 @@
 		{"id":"archive","type":"text","text":"## 06_archive — RESTING\nFinished projects, old daily notes.\n\n**Never deleted.** The decisions outlive the project.","x":0,"y":440,"width":640,"height":140,"color":"6"},
 		{"id":"knowledge","type":"text","text":"## 04_knowledge — MEMORY\nThe permanent wiki. Where things **compound**.\n\n`it/` · `people/` · `company/` · `references/`","x":0,"y":215,"width":640,"height":130,"color":"4"},
 		{"id":"title","type":"text","text":"# How this vault works\n\nEight folders. Material always flows **downward**.","x":0,"y":-520,"width":640,"height":120},
-		{"id":"inbox","type":"text","text":"## 01_inbox — INPUT\nRaw material. A **buffer, never a storage**.\nThings may wait here.\nThey may not move in.","x":0,"y":-320,"width":640,"height":150,"color":"1"},
 		{"id":"daily","type":"text","text":"## 05_daily_notes\nLOG — what happened, day by day.\n\nRuns **alongside** everything.\nWeekly reports are built from it.","x":770,"y":-120,"width":340,"height":180,"color":"5"},
 		{"id":"private","type":"text","text":"## 07_private\nOutside the flow.\n\n**Not in git.** Fails closed:\nif unsure, it goes here.","x":-520,"y":420,"width":340,"height":160,"color":"1"},
-		{"id":"note","type":"text","text":"**The rule that makes it work:**\n\nNothing stays where it landed.\nEverything here is on its way\nsomewhere else.","x":720,"y":-375,"width":340,"height":130}
+		{"id":"note","type":"text","text":"**The rule that makes it work:**\n\nNothing stays where it landed.\nEverything here is on its way\nsomewhere else.","x":720,"y":-375,"width":340,"height":130},
+		{"id":"inbox","type":"text","text":"## 01_inbox — INPUT\nRaw material. A **buffer, never a storage**.\nThings may wait here.\nThey may not move in.","x":0,"y":-320,"width":640,"height":150,"color":"1"}
 	],
 	"edges":[
 		{"id":"e1","fromNode":"title","fromSide":"bottom","toNode":"inbox","toSide":"top"},
@@ -18,7 +18,6 @@
 		{"id":"e4","fromNode":"projects","fromSide":"bottom","toNode":"knowledge","toSide":"top","label":"worth keeping"},
 		{"id":"e5","fromNode":"areas","fromSide":"bottom","toNode":"knowledge","toSide":"top"},
 		{"id":"e6","fromNode":"knowledge","fromSide":"bottom","toNode":"archive","toSide":"top","label":"superseded"},
-		{"id":"e7","fromNode":"daily","fromSide":"bottom","toNode":"archive","toSide":"right","label":"after 30 days"},
 		{"id":"e8","fromNode":"system","fromSide":"right","toNode":"knowledge","toSide":"left","label":"rules apply\n everywhere"}
 	]
 }

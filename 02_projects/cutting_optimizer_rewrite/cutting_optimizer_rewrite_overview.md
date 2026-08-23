@@ -4,7 +4,7 @@ tags: [project, development, optimizer, paneflow]
 status: active
 started: 2026-05-11
 created: 2026-05-11
-updated: 2026-08-20
+updated: 2026-08-23
 ---
 
 # Cutting Optimizer Rewrite
@@ -41,12 +41,17 @@ Roughly two thirds. Honest version:
 | Guillotine cuts (straight edge to edge) | working, beats legacy on 231 of 240 jobs |
 | Free-form nesting for laminated stock | not started |
 | Remnant handling | back in scope since 28 July, schema not final |
-| Benchmark run in CI | not yet, needs a build agent from [[nils_putty]] |
+| Benchmark run in CI | done 2026-08-22, build agent from [[nils_putty]] — see [[cutting_optimizer_rewrite_meeting_2026_08_04]] |
 | Low-E coating orientation | not started, and I do not understand it yet |
 
 Three benchmark jobs regress badly — 112, 118 and 203. The worst is 4.1 percentage points of
 yield below legacy, which for a plant the size of Glaswerk Nord is roughly one extra sheet of
 float glass per shift turned into cullet, the broken glass that goes back to the furnace.
+
+**Unresolved contradiction:** [[cutting_optimizer_rewrite_tasks]] has the "stop 112/118/203
+regressing" task ticked done on 2026-08-18, but the whiteboard from the very next day (19.08)
+still called all three red, and this status line has not been corrected since. One of the two
+is wrong. Not fixing this quietly — needs a look before anyone trusts either.
 
 The legacy engine is one file, `Optimizer.cs`, 6,200 lines, with a 400-line method called
 `DoIt()`. Marco says it has been correct since about 2015 and that this is not the same thing
@@ -74,12 +79,28 @@ Short version. The full reasoning, including what was rejected, is in
 2. **Low-E coating orientation.** Low-E is a thin metallic coating on one face of the glass. Every
    lite cut from one sheet has the coating on the same side, and the order says which side it
    has to end up on. The legacy engine handles this somewhere and I have not found where.
-   Asked Marco, he said "later".
+   Asked Marco, he said "later". Whiteboard, 19.08: he mentioned a "coating flag" specifically on
+   job 203, one of the three regressing benchmarks — did not follow it, on the list to ask again
+   → [[marco_bevel]] open questions.
 3. **Does Glaswerk Nord get the new engine at go-live?** No — decided on
-   [[cutting_optimizer_rewrite_meeting_2026_08_04|4 August]]. Open part: whether they have
-   actually been told. [[lena_mullion]] was going to.
+   [[cutting_optimizer_rewrite_meeting_2026_08_04|4 August]]. The action to tell them is still
+   open there: "Tell [[lena_mullion]] that Glaswerk Nord goes live on the legacy engine — Dana".
+   Whiteboard, 19.08, asks "does Timo know" — Timo Reiss is Glaswerk Nord's IT contact (see
+   [[glaswerk_nord_meeting_2026_08_06]]), so this is a fair second question: telling Lena is not
+   the same as the IT side knowing. Neither is confirmed yet.
 4. **Who owns the `.opt` writer after this ships?** Right now Marco owns it informally, which
-   means it is owned by one person and written down nowhere.
+   means it is owned by one person and written down nowhere. He underlined "do not touch" twice
+   on the whiteboard, 19.08 — treat that as confirmation the informal ownership is still very
+   much in force, not as an answer to who owns it on paper.
+5. **Does legacy sort by thickness before area?** This is Marco's theory, not a mystery — recorded
+   in [[cutting_optimizer_rewrite_meeting_2026_08_04]]: "all three [regressing jobs] have mixed
+   thickness in one batch, and the legacy engine sorts by thickness before it does anything
+   else. He thinks the new engine does not. I have not verified this." [[cutting_optimizer]]
+   currently documents the legacy sort as "by area, largest first" with no thickness step, so one
+   of the two write-ups is incomplete. The open action to check it against jobs 112, 118, 203
+   lives in that same meeting note and is still unticked. Whiteboard, 19.08, is the same
+   unverified theory surfacing again — not new information, but a sign it is worth actually
+   doing.
 
 ## Related
 

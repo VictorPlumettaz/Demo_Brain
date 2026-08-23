@@ -4,7 +4,7 @@ tags: [project, customer, onboarding, paneflow]
 status: active
 started: 2026-06-22
 created: 2026-06-22
-updated: 2026-08-19
+updated: 2026-08-23
 ---
 
 # Customer Onboarding — Glaswerk Nord
@@ -95,7 +95,11 @@ cannot cut.
    [[cutting_optimizer_rewrite_overview]]. Whether they have been told is still open.
 4. **Remnant stock.** Their remnant rack covers about 11 percent of their float glass demand,
    which is the number that reversed a decision in the other project. What I do not know is
-   whether the Glasplan export contains the rack at all.
+   whether the Glasplan export contains the rack at all. Whiteboard, 19.08: reconfirm this 11%
+   figure with [[lena_mullion]] before it gets used for anything else.
+5. **Second dry run timing.** Planned for 2026-09-07, before the on-site training on 22/23
+   September. Whiteboard, 19.08: does the order matter? Not written down anywhere why 7
+   September was picked relative to training — worth asking before assuming it is fine.
 
 ## Related
 
