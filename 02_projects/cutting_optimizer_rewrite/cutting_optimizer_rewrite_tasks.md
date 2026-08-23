@@ -2,7 +2,7 @@
 title: Cutting Optimizer Rewrite — Tasks
 tags: [project, tasks, optimizer]
 created: 2026-05-11
-updated: 2026-08-20
+updated: 2026-08-26
 ---
 
 # Cutting Optimizer Rewrite — Tasks
@@ -13,7 +13,7 @@ meeting note, not here — [[cutting_optimizer_rewrite_meeting_2026_08_04]].
 ## Open
 
 - [ ] #priority/high Stop benchmark jobs 112, 118 and 203 regressing — Robin, worst is 4.1 points of yield below legacy
-- [ ] #priority/high Get the remnant table schema — Robin, blocked by [[marco_bevel]] until he is off the 12.1 hotfix (back 2026-08-25)
+- [ ] #priority/high Get the remnant table schema — Robin, [[marco_bevel]] came off the 12.1 hotfix on 2026-08-25, an hour is booked with him
 - [ ] #priority/medium Implement free-form nesting for laminated stock — Robin, only guillotine cuts work today
 - [ ] #priority/medium Ask [[priya_tempered]] for a benchmark set with low-E coated glass — Robin, current 240 jobs contain none
 - [ ] #priority/low Write down the `.opt` file format → [[cutting_optimizer]] — Robin, it currently exists only in Marco's head
