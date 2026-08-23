@@ -2,7 +2,7 @@
 title: Marco Bevel
 tags: [knowledge, people]
 created: 2026-04-15
-updated: 2026-08-23
+updated: 2026-08-20
 ---
 
 # Marco Bevel
@@ -28,9 +28,6 @@ about that code more than anyone else in the building.
 - In review, a bare "why?" under a line means he already knows what is wrong and wants me to
   find it. "Because the example did it that way" is not an answer → [[code_review_basics]].
 - When he says "that will bite you", I write it down. Three for three so far.
-- "Do not touch the `.opt` writer" — said twice, underlined on the whiteboard, 19.08. When he
-  repeats a warning like that, it is not a style opinion → [[cutting_optimizer_rewrite_overview]]
-  open question 4, who owns that code is still unresolved.
 
 ## What I learned from him
 
@@ -40,13 +37,6 @@ about that code more than anyone else in the building.
 - Read the log before the code. Then read it again from the *first* error, not the last one.
 - A test that needs a running database is not a unit test → [[unit_testing]].
 - Most of [[paneflow]] is not badly written. It is written for a requirement nobody wrote down.
-
-## Open Questions
-
-- **203, the coating flag.** He said something about a coating flag on benchmark job 203, I did
-  not follow it at the time and need to ask him again. Same underlying topic as open question 2
-  in [[cutting_optimizer_rewrite_overview]] (Low-E coating orientation) — captured from the
-  whiteboard after standup, 19.08.
 
 ## Related
 

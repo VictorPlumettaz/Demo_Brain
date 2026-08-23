@@ -2,7 +2,7 @@
 title: Log
 tags: [system, log]
 created: 2026-04-13
-updated: 2026-08-23
+updated: 2026-08-21
 ---
 
 # Log
@@ -17,7 +17,7 @@ Newest first. Rotated into `06_archive/` when this passes 30 lines.
 
 | Date | What came in | Where it went |
 |---|---|---|
-| 2026-08-19 | Whiteboard photo from standup | [[cutting_optimizer_rewrite_overview]], [[cutting_optimizer_rewrite_tasks]], [[glaswerk_nord_overview]], [[glaswerk_nord_tasks]], [[marco_bevel]] — rest folded into [[2026_08_23]], typed note moved to `06_archive/trash/` |
+| 2026-08-19 | Whiteboard photo from standup | still in `01_inbox/` — **not processed yet** |
 | 2026-08-18 | Marco's explanation of the double-counted remnants | [[cutting_optimizer_rewrite_decisions]], [[cutting_optimizer]] |
 | 2026-08-17 | Notes on the encoding problem in the Glaswerk Nord export | [[glaswerk_nord_overview]] |
 | 2026-08-14 | Screenshot of the coffee machine JSON response | [[coffee_machine_api_findings]] |

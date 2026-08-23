@@ -1,16 +1,9 @@
 ---
 title: Whiteboard after standup 19.08
-tags: [inbox, raw, unprocessed, trash]
+tags: [inbox, raw, unprocessed]
 created: 2026-08-19
-updated: 2026-08-23
-deleted: 2026-08-23
+updated: 2026-08-19
 ---
-
-Processed via `/ingest` on 2026-08-23. Content is now in
-[[cutting_optimizer_rewrite_overview]], [[cutting_optimizer_rewrite_tasks]],
-[[glaswerk_nord_overview]], [[glaswerk_nord_tasks]], [[marco_bevel]] and
-[[2026_08_23|today's daily note]]. Kept here only for the 30-day trash window, see
-[[06_archive/trash/README|the trash rules]].
 
 photo of the whiteboard, kitchen side, after standup. typed it up before someone wiped it. not
 cleaned up, half of this is other people's handwriting

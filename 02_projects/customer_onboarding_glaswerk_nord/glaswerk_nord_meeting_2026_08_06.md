@@ -46,8 +46,8 @@ there.
 
 ## Actions
 
-- [x] #priority/high Chase Anke Vogel on the low-E coated side — [[lena_mullion]], before the next call [completion:: 2026-08-18]
-- [x] #priority/medium Compare Timo's list of live codes against my 340 — Robin, may cut the mapping work in half [completion:: 2026-08-23]
+- [ ] #priority/high Chase Anke Vogel on the low-E coated side — [[lena_mullion]], before the next call
+- [ ] #priority/medium Compare Timo's list of live codes against my 340 — Robin, may cut the mapping work in half
 - [x] #priority/medium Send Anke the training agenda and the two group lists — Lena, done 2026-08-07
 
 ## Related

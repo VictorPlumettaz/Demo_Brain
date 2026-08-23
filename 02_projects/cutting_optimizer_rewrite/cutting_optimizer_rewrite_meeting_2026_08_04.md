@@ -31,7 +31,7 @@ blocker for 12.3, but it goes on the list.
 
 ## Actions
 
-- [x] #priority/high Move the benchmark run into CI — Robin, needs a build agent with 16 GB RAM from [[nils_putty]] [completion:: 2026-08-22]
+- [ ] #priority/high Move the benchmark run into CI — Robin, needs a build agent with 16 GB RAM from [[nils_putty]]
 - [ ] #priority/medium Check Marco's thickness-sorting theory against jobs 112, 118 and 203 — Robin
 - [ ] #priority/medium Tell [[lena_mullion]] that Glaswerk Nord goes live on the legacy engine — Dana
 - [x] #priority/medium Update the release plan to 12.3 and tell product — Dana, done 2026-08-05

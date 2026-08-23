@@ -5,7 +5,7 @@
   "showAttachments": false,
   "hideUnresolved": true,
   "showOrphans": false,
-  "collapse-color-groups": true,
+  "collapse-color-groups": false,
   "colorGroups": [
     {
       "query": "path:02_projects",
@@ -50,16 +50,16 @@
       }
     }
   ],
-  "collapse-display": true,
+  "collapse-display": false,
   "showArrow": true,
   "textFadeMultiplier": -1.4,
   "nodeSizeMultiplier": 1.56702256944444,
   "lineSizeMultiplier": 1.6,
-  "collapse-forces": true,
+  "collapse-forces": false,
   "centerStrength": 0.4,
   "repelStrength": 10,
   "linkStrength": 0.328038194444444,
   "linkDistance": 250,
-  "scale": 0.5520784640362787,
-  "close": true
+  "scale": 0.39378402183936295,
+  "close": false
 }
